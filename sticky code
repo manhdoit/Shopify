@@ -1,0 +1,33 @@
+/*====== JS code ====*/
+let elScrollPosition = 0;
+const el = document.getElementById('pf-cart-bottom');
+window.addEventListener('scroll', function(e){
+	elScrollPosition = window.scrollY;
+	if(elScrollPosition > 1000) {
+	  	el.classList.add('show');
+	} else {
+	  	el.classList.remove('show');
+	}
+})
+
+
+/*=====CSS code====*/
+
+#pf​-cart-bottom {
+ width: 100%;
+ position: fixed;
+ bottom: -100%;
+ left: 0;
+ opacity: 0;
+ transition: all ease .3s;
+ visibility: hidden;
+ transform: translate(0px, 100px);
+ z-index: 86;
+}
+#pf​-cart-bottom.show {
+ transform: translate(0,0);
+ opacity: 1;
+ visibility: visible;
+ transition: all ease .3s;
+ bottom: 0;
+}
